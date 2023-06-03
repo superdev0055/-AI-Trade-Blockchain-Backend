@@ -1,0 +1,108 @@
+<?php
+
+
+namespace App\Modules\{{ModuleName}};
+
+
+use App\Http\Controllers\Controller;
+use App\Models\{{ModelName}};
+use Illuminate\Http\Request;
+use LaravelCommon\App\Exceptions\Err;
+
+/**
+ * @intro {{TableComment}}
+ * Class {{ModelName}}Controller
+ * @package App\Modules\{{ModuleName}}
+ */
+class {{ModelName}}Controller extends Controller
+{
+    /**
+     * @intro 列表
+     * @param Request $request
+     * @return mixed
+     * @throws Err
+    */
+    public function list(Request $request): mixed
+    {
+        $params = $request->validate([
+            'name' => 'nullable|string', # 模糊搜索：名称
+        ]);
+        return {{ModelName}}::ifWhereLike($params,'name')
+            ->order()
+            ->withTrashed()
+            ->paginate($this->perPage());
+    }
+
+    /**
+     * @intro 添加
+     * @param Request $request
+     * @return array
+     */
+    public function store(Request $request): array
+    {
+        $params = $request->validate([
+{{InsertString}}
+        ]);
+        {{ModelName}}::unique($params, ['name'], '名称');
+        {{ModelName}}::create($params);
+        return [];
+    }
+
+    /**
+     * @intro 修改
+     * @param Request $request
+     * @return array
+     */
+    public function update(Request $request): array
+    {
+        $params = $request->validate([
+            'id' => 'required|integer', # id
+{{InsertString}}
+        ]);
+        {{ModelName}}::unique($params, ['name'], '名称');
+        {{ModelName}}::idp($params)->update($params);
+        return [];
+    }
+
+    /**
+     * @intro 软删除
+     * @param Request $request
+     * @return array
+     */
+    public function softDelete(Request $request): array
+    {
+        $params = $request->validate([
+            'id' => 'required|integer', # id
+        ]);
+        {{ModelName}}::idp($params)->delete();
+        return [];
+    }
+
+    /**
+     * @intro 恢复软删除
+     * @param Request $request
+     * @return array
+     */
+    public function restore(Request $request): array
+    {
+        $params = $request->validate([
+            'id' => 'required|integer', # id
+        ]);
+        {{ModelName}}::withTrashed()->idp($params)->restore();
+        return [];
+    }
+
+    /**
+     * @intro 强制删除
+     * @param Request $request
+     * @return array
+     */
+    public function delete(Request $request): array
+    {
+        $params = $request->validate([
+            'id' => 'required|integer', # id
+        ]);
+        {{ModelName}}::withTrashed()->idp($params)->forceDelete();
+        return [];
+    }
+}

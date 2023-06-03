@@ -1,0 +1,13 @@
+Manifest-Version: 1.0
+Archiver-Version: Plexus Archiver
+Created-By: Apache Maven 3.8.1
+Built-By: helloworld
+Build-Jdk: 18.0.2
+Main-Class: org.springframework.boot.loader.JarLauncher
+Start-Class: com.xxl.job.executor.XxlJobExecutorApplication
+Spring-Boot-Version: 2.6.7
+Spring-Boot-Classes: BOOT-INF/classes/
+Spring-Boot-Lib: BOOT-INF/lib/
+Spring-Boot-Classpath-Index: BOOT-INF/classpath.idx
+Spring-Boot-Layers-Index: BOOT-INF/layers.idx
+

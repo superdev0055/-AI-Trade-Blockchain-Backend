@@ -1,0 +1,838 @@
+<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><style>/* copy from https://github.com/sindresorhus/github-markdown-css/ */
+
+html,body{background-color: #ffffff;}
+
+.markdown-body {
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  line-height: 1.5;
+  color: #333333;
+  font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji;
+  font-size: 16px;
+  line-height: 1.5;
+  word-wrap: break-word;
+}
+
+.markdown-body .octicon {
+  display: inline-block;
+  fill: currentColor;
+  vertical-align: text-bottom;
+}
+
+.markdown-body figure{margin:0;padding:0; display:table;}
+.markdown-body figure figcaption{font-size:92%; text-align:center; color:#09844f;}
+
+.markdown-body .anchor {
+  float: left;
+  line-height: 1;
+  margin-left: -20px;
+  padding-right: 4px;
+}
+
+.markdown-body .anchor:focus {
+  outline: none;
+}
+
+.markdown-body h1 .octicon-link,
+.markdown-body h2 .octicon-link,
+.markdown-body h3 .octicon-link,
+.markdown-body h4 .octicon-link,
+.markdown-body h5 .octicon-link,
+.markdown-body h6 .octicon-link {
+  color: #0595bf;
+  vertical-align: middle;
+  visibility: hidden;
+}
+
+.markdown-body h1:hover .anchor,
+.markdown-body h2:hover .anchor,
+.markdown-body h3:hover .anchor,
+.markdown-body h4:hover .anchor,
+.markdown-body h5:hover .anchor,
+.markdown-body h6:hover .anchor {
+  text-decoration: none;
+}
+
+.markdown-body details {
+  display: block;
+}
+
+.markdown-body summary {
+  display: list-item;
+}
+
+.markdown-body a {
+  background-color: initial;
+}
+
+.markdown-body a:active,
+.markdown-body a:hover {
+  outline-width: 0;
+}
+
+.markdown-body strong {
+  font-weight: inherit;
+  font-weight: bolder;
+}
+.markdown-body strong{
+  color: #333333;
+}
+.markdown-body em{
+  color: #333333;
+}
+
+.markdown-body h1 {
+  font-size: 2em;
+  margin: .67em 0;
+}
+
+.markdown-body img {
+  border-style: none;
+}
+
+.markdown-body code,
+.markdown-body kbd,
+.markdown-body pre {
+  font-family: monospace,monospace;
+  font-size: 1em;
+}
+
+.markdown-body hr {
+  box-sizing: initial;
+  height: 0;
+  overflow: visible;
+}
+
+.markdown-body input {
+  font: inherit;
+  margin: 0;
+}
+
+.markdown-body input {
+  overflow: visible;
+}
+
+.markdown-body [type=checkbox] {
+  box-sizing: border-box;
+  padding: 0;
+}
+
+.markdown-body * {
+  box-sizing: border-box;
+}
+
+.markdown-body input {
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+}
+
+.markdown-body a {
+  color: #0366dd;
+  text-decoration: none;
+}
+.markdown-body mjx-container[jax="SVG"] > svg a{fill:#0366dd;stroke: #0366dd;}
+
+.markdown-body a:hover {
+  text-decoration: underline;
+}
+
+.markdown-body strong {
+  font-weight: 600;
+}
+
+.markdown-body hr:after,
+.markdown-body hr:before {
+  display: table;
+  content: "";
+}
+
+.markdown-body hr:after {
+  clear: both;
+}
+
+.markdown-body table {
+  border-spacing: 0;
+  border-collapse: collapse;
+}
+
+.markdown-body td,
+.markdown-body th {
+  padding: 0;
+}
+
+.markdown-body details summary {
+  cursor: pointer;
+}
+
+.markdown-body kbd {
+  display: inline-block;
+  padding: 3px 5px;
+  font: 12px SFMono-Regular,Consolas,Liberation Mono,Menlo,monospace;
+  line-height: 12px;
+  color: #09844f;
+  vertical-align: middle;
+  background-color: #f8f8f8;
+  border: 1px solid #e2e2e2;
+  border-radius: 3px;
+}
+
+.markdown-body h1,
+.markdown-body h2,
+.markdown-body h3,
+.markdown-body h4,
+.markdown-body h5,
+.markdown-body h6 {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.markdown-body h1 {
+  font-size: 32px;
+}
+
+.markdown-body h1,
+.markdown-body h2 {
+  font-weight: 600;
+}
+
+.markdown-body h2 {
+  font-size: 24px;
+}
+
+.markdown-body h3 {
+  font-size: 20px;
+}
+
+.markdown-body h3,
+.markdown-body h4 {
+  font-weight: 600;
+}
+
+.markdown-body h4 {
+  font-size: 16px;
+}
+
+.markdown-body h5 {
+  font-size: 14px;
+}
+
+.markdown-body h5,
+.markdown-body h6 {
+  font-weight: 600;
+}
+
+.markdown-body h6 {
+  font-size: 12px;
+}
+
+.markdown-body p {
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+.markdown-body blockquote {
+  margin: 0;
+}
+
+.markdown-body ol,
+.markdown-body ul {
+  padding-left: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.markdown-body ol ol,
+.markdown-body ul ol {
+  list-style-type: lower-roman;
+}
+
+.markdown-body ol ol ol,
+.markdown-body ol ul ol,
+.markdown-body ul ol ol,
+.markdown-body ul ul ol {
+  list-style-type: lower-alpha;
+}
+
+.markdown-body dd {
+  margin-left: 0;
+}
+
+.markdown-body code,
+.markdown-body pre {
+  font-family: SFMono-Regular,Consolas,Liberation Mono,Menlo,monospace;
+  font-size: 12px;
+}
+
+.markdown-body pre {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.markdown-body input::-webkit-inner-spin-button,
+.markdown-body input::-webkit-outer-spin-button {
+  margin: 0;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.markdown-body:after,
+.markdown-body:before {
+  display: table;
+  content: "";
+}
+
+.markdown-body:after {
+  clear: both;
+}
+
+.markdown-body>:first-child {
+  margin-top: 0!important;
+}
+
+.markdown-body>:last-child {
+  margin-bottom: 0!important;
+}
+
+.markdown-body a:not([href]) {
+  color: inherit;
+  text-decoration: none;
+}
+
+.markdown-body blockquote,
+.markdown-body details,
+.markdown-body dl,
+.markdown-body ol,
+.markdown-body p,
+.markdown-body pre,
+.markdown-body table,
+.markdown-body ul {
+  margin-top: 0;
+  margin-bottom: 16px;
+}
+
+.markdown-body hr {
+  height: .25em;
+  padding: 0;
+  margin: 24px 0;
+  background-color: #e2e2e2;
+  border: 0;
+}
+
+.markdown-body blockquote {
+  padding: 0 1em;
+  color: #636363;
+  border-left: .25em solid #bbbbbb;
+}
+
+.markdown-body blockquote>:first-child {
+  margin-top: 0;
+}
+
+.markdown-body blockquote>:last-child {
+  margin-bottom: 0;
+}
+
+.markdown-body h1,
+.markdown-body h2,
+.markdown-body h3,
+.markdown-body h4,
+.markdown-body h5,
+.markdown-body h6 {
+  margin-top: 24px;
+  margin-bottom: 16px;
+  font-weight: 600;
+  line-height: 1.25;
+}
+
+.markdown-body h1 {
+  font-size: 2em;
+}
+
+.markdown-body h1,
+.markdown-body h2 {
+  padding-bottom: .3em;
+  border-bottom: 1px solid #e8e8e8;
+  color: #0595bf;
+}
+
+.markdown-body h2 {
+  font-size: 1.5em;
+  color: #0595bf;
+}
+
+.markdown-body h3 {
+  font-size: 1.25em;
+  color: #0595bf;
+}
+
+.markdown-body h4 {
+  font-size: 1em;
+  color: #0595bf;
+}
+
+.markdown-body h5 {
+  font-size: .875em;
+  color: #0595bf;
+}
+
+.markdown-body h6 {
+  font-size: .85em;
+  color: #0595bf;
+}
+
+.markdown-body ol,
+.markdown-body ul {
+  padding-left: 2em;
+}
+
+.markdown-body ol ol,
+.markdown-body ol ul,
+.markdown-body ul ol,
+.markdown-body ul ul {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.markdown-body li {
+  word-wrap: break-all;
+}
+
+.markdown-body li>p {
+  margin-top: 16px;
+}
+
+.markdown-body li+li {
+  margin-top: .25em;
+}
+
+.markdown-body dl {
+  padding: 0;
+}
+
+.markdown-body dl dt {
+  padding: 0;
+  margin-top: 16px;
+  font-size: 1em;
+  font-style: italic;
+  font-weight: 600;
+}
+
+.markdown-body dl dd {
+  padding: 0 16px;
+  margin-bottom: 16px;
+}
+
+.markdown-body table {
+  display: block;
+  width: 100%;
+  overflow: auto;
+}
+
+.markdown-body table th {
+  font-weight: 600;
+}
+
+.markdown-body table td,
+.markdown-body table th {
+  padding: 6px 13px;
+  border: 1px solid #bababa;
+}
+
+.markdown-body table tr {
+  background-color: #ffffff;
+  border-top: 1px solid #bababa;
+}
+
+.markdown-body table th {
+  background-color: #e8e8e8;
+}
+
+.markdown-body table tr:nth-child(2n) {
+  background-color: #f9f9f9;
+}
+
+.markdown-body img {
+  max-width: 100%;
+  box-sizing: initial;
+}
+
+.markdown-body img[align=right] {
+  padding-left: 20px;
+}
+
+.markdown-body img[align=left] {
+  padding-right: 20px;
+}
+
+.markdown-body code {
+  padding: .2em .4em;
+  margin: 0;
+  font-size: 85%;
+  background-color: #f8f8f8;
+  color: #09844f;
+  border-radius: 3px;
+}
+
+.markdown-body pre {
+  word-wrap: normal;
+}
+
+.markdown-body pre>code {
+  padding: 0;
+  margin: 0;
+   font-size: 100%;
+  word-break: normal;
+  white-space: pre;
+  background: transparent;
+  border: 0;
+}
+
+.markdown-body .highlight {
+  margin-bottom: 16px;
+}
+
+.markdown-body .highlight pre {
+  margin-bottom: 0;
+  word-break: normal;
+}
+
+.markdown-body .highlight pre,
+.markdown-body pre {
+  padding: 16px;
+  overflow: auto;
+  font-size: 85%;
+  line-height: 1.45;
+  background-color: #f8f8f8;
+  border-radius: 3px;
+}
+
+.markdown-body pre code {
+  display: inline;
+  max-width: auto;
+  padding: 0;
+  margin: 0;
+  overflow: visible;
+  line-height: inherit;
+  word-wrap: normal;
+  background-color: initial;
+  border: 0;
+  color: #09844f;
+}
+
+.markdown-body .task-list-item {
+  list-style-type: none;
+}
+
+.markdown-body .task-list-item+.task-list-item {
+  margin-top: 3px;
+}
+
+.markdown-body .task-list-item input {
+  margin: 0 .2em .25em -1.6em;
+  vertical-align: middle;
+}
+.markdown-body section.footnotes{
+    margin-top:48px;
+    border-top:solid 1px #e2e2e2;
+    padding-top:0px;
+}
+
+@media (prefers-color-scheme: dark) {
+  .markdown-body mark{color: #111;}
+}
+
+/* PrismJS 1.23.0
+https://prismjs.com/download.html#themes=prism&languages=markup+css+clike+javascript */
+/**
+ * prism.js default theme for JavaScript, CSS and HTML
+ * Based on dabblet (http://dabblet.com)
+ * @author Lea Verou
+ */
+
+
+code[class*="language-"],
+pre[class*="language-"] {
+    color: black;
+    background: none;
+    font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+    text-align: left;
+    white-space: pre;
+    word-spacing: normal;
+    word-break: normal;
+    word-wrap: normal;
+    -moz-tab-size: 4;
+    -o-tab-size: 4;
+    tab-size: 4;
+
+    -webkit-hyphens: none;
+    -moz-hyphens: none;
+    -ms-hyphens: none;
+    hyphens: none;
+}
+
+@media print {
+    code[class*="language-"],
+    pre[class*="language-"] {
+        text-shadow: none;
+    }
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+    padding: 1em;
+    margin: .5em 0;
+    overflow: auto;
+}
+
+:not(pre) > code[class*="language-"],
+pre[class*="language-"] {
+    background-color: #f8f8f8;
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+    padding: .1em;
+    border-radius: .3em;
+    white-space: normal;
+}
+
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+    color: #008327;
+}
+
+.token.punctuation {
+    color: #2834ce;
+}
+
+.token.namespace {
+    opacity: .7;
+}
+
+.token.property,
+.token.tag,
+.token.boolean,
+.token.number,
+.token.constant,
+.token.symbol,
+.token.deleted {
+    color: #2834ce;
+}
+
+.token.selector,
+.token.attr-name,
+.token.string,
+.token.char,
+.token.builtin,
+.token.inserted {
+    color: #d32d26;
+}
+
+.token.operator,
+.token.entity,
+.token.url,
+.language-css .token.string,
+.style .token.string {
+    color: #$$codeBlockColor$$;
+}
+
+.token.atrule,
+.token.attr-value,
+.token.keyword {
+    color: #bc319c;
+}
+
+.token.function,
+.token.class-name {
+    color: #967d41;
+}
+
+.token.regex,
+.token.important,
+.token.variable {
+    color: #784830;
+}
+
+.token.important,
+.token.bold {
+    font-weight: bold;
+}
+.token.italic {
+    font-style: italic;
+}
+
+.token.entity {
+    cursor: help;
+}
+
+
+pre[class*="language-"].line-numbers {
+  position: relative;
+  padding-left: 3.8em;
+  counter-reset: linenumber;
+}
+
+pre[class*="language-"].line-numbers > code {
+  position: relative;
+  white-space: inherit;
+}
+
+.line-numbers .line-numbers-rows {
+  position: absolute;
+  pointer-events: none;
+  top: 0;
+  font-size: 100%;
+  left: -3.8em;
+  width: 3em; /* works for line-numbers below 1000 lines */
+  letter-spacing: -1px;
+  border-right: 1px solid #c0c0c0;
+
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+
+}
+
+  .line-numbers-rows > span {
+    display: block;
+    counter-increment: linenumber;
+  }
+
+    .line-numbers-rows > span:before {
+      content: counter(linenumber);
+      color: #c0c0c0;
+      display: block;
+      padding-right: 0.8em;
+      text-align: right;
+    }
+
+
+</style> <style>.mweb-charts{background:#fff;}
+body{ box-sizing: border-box;
+    margin: 0 auto;
+    padding: 28px}
+@media print{
+    pre, code, pre code {
+     overflow: visible !important;
+     white-space: pre-wrap !important;       /* css-3 */
+     white-space: -moz-pre-wrap !important;  /* Mozilla, since 1999 */
+     white-space: -pre-wrap !important;      /* Opera 4-6 */
+     white-space: -o-pre-wrap !important;    /* Opera 7 */
+     word-wrap: break-word !important;       /* Internet Explorer 5.5+ */
+    }
+    html,body{margin:0;padding:4px;}
+}
+
+</style><script>window.MathJax = {     tex: { tags: 'ams', inlineMath: [ ['$','$'], ['\\(','\\)'] ] },     startup: {     pageReady() {       return MathJax.startup.defaultPageReady().then(function () {          window.mweb_mathjax_ready_val = 'yes';          if(window.mweb_mathjax_ready !== undefined){ mweb_mathjax_ready(); }       });     }   }};document.addEventListener('DOMContentLoaded', function(event) {    if (typeof Prism != 'undefined') {         Prism.highlightAll();     }});window.mweb_mathjax_ready_val = '';function theMWebMathJaxRenderIsReady(key){ return window.mweb_mathjax_ready_val; }</script><script>window.MathJax = { tex: { tags: 'ams', inlineMath: [ ['$','$'], ['\\(','\\)'] ] } }; </script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script></head><body><div id='markdown_content' class='markdown-body'><p><img src="https://images.ctfassets.net/q5ulk4bp65r7/3thWklmvu2WmAHJh0k1AcC/51521feeef170d94a446fbec6f262912/what-is-ethereum.png?w=768&amp;fm=png" alt="What is Ethereum?" />Ethereum is the second-biggest cryptocurrency by market cap after Bitcoin. It is also a decentralized computing platform that can run a wide variety of applications — including the entire universe of DeFi.</p>
+<p>Ethereum, which launched in 2015, is the second-biggest cryptocurrency by <a href="https://www.coinbase.com/learn/crypto-basics">market cap</a> after Bitcoin. But unlike Bitcoin, it wasn’t created to be digital money. Instead, Ethereum’s founders set out to build a new kind of global, decentralized computing platform that takes the security and openness of <a href="https://www.coinbase.com/learn/crypto-basics/what-is-a-blockchain">blockchains</a> and extends those attributes to a vast range of applications.</p>
+<p>Everything from financial tools and games to complex databases are already running on the Ethereum blockchain. And its future potential is only limited by developers’ imaginations. As the nonprofit Ethereum Foundation puts it: “Ethereum can be used to codify, decentralize, secure and trade just about anything.”</p>
+<ul>
+<li>You can check the latest prices on Coinbase's <a href="https://www.coinbase.com/price/ethereum">Ethereum asset page</a>.</li>
+<li>Ethereum has become <strong>a popular investment vehicle and store of wealth</strong> (and can be used, like Bitcoin, to send or receive value without an intermediary).</li>
+<li><strong>The Ethereum blockchain allows developers to build and run a huge variety of applications</strong>: everything from games and advanced databases to complex decentralized financial instruments — meaning that they don’t require a bank or any other institution in the middle.</li>
+<li><strong>Ethereum-based apps are built using “smart contracts.”</strong> <a href="https://www.coinbase.com/learn/crypto-basics/what-is-a-smart-contract">Smart contracts</a>, like regular paper contracts, establish the terms of an arrangement between parties. But unlike an old-fashioned contract, smart contracts automatically execute when the terms are met without the need for either participating party to know who is on the other side of the deal — and without the need for any kind of intermediary.</li>
+<li><strong>Ethereum, like Bitcoin, is an open source project that is not owned or operated by a single individual.</strong> Anyone with an internet connection can run an Ethereum node or interact with the network.</li>
+<li>Much like Bitcoin’s decentralized blockchain allows any two strangers, anywhere in the world, to send or receive money without a bank in the middle, <strong>smart contracts running on Ethereum’s decentralized blockchain allow developers to build complex applications that should run exactly as programmed without downtime, censorship, fraud, or third-party interference</strong>.</li>
+</ul>
+<p>Popular Ethereum-based innovations include <a href="https://www.coinbase.com/learn/crypto-basics/what-is-a-stablecoin"><strong>stablecoins</strong></a> (like DAI, which has its value pegged to the dollar by smart contract), <strong>decentralized finance apps</strong> (collectively known as DeFi), and <strong>other decentralized apps</strong> (or Dapps).</p>
+<p><strong>What’s the difference between Ethereum, Ether, and ETH?</strong></p>
+<p>Ethereum is the name of the network. “Ether” is the native cryptocurrency token used by the Ethereum network. That said, in day-to-day usage most people call the token “ETH” (or just “Ethereum”). As a way of sending, receiving, or storing value ETH works much like Bitcoin. But it also has a special role on Ethereum network. Because users pay fees in ETH to execute smart contracts, you can think of it as the fuel that keeps the whole thing running (which is why those fees are called “gas”).</p>
+<p>If Bitcoin is “digital gold,” ETH can be seen as “digital oil.”</p>
+<h2><a id="is-ethereum-secure" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>Is Ethereum secure?</h2>
+<p>ETH is currently secured by the Ethereum blockchain in much the same way Bitcoin is secured by <em>its</em> blockchain. A huge amount of computing power — contributed by all the computers on the network — verifies and secures every transaction, making it virtually impossible for any third party to interfere.</p>
+<p><img src="//images.ctfassets.net/q5ulk4bp65r7/213mgIWTLehOb4p6YaOw3X/851b7a5d3f2a08deff0c990eed2b3b20/is-ethereum-secure.png?w=1180&amp;fm=png" alt="A lock with the Ethereum symbol on it " />The fundamental ideas behind cryptocurrencies help make them safe: the systems are permissionless and the core software is open-source, meaning countless computer scientists and cryptographers have been able to examine all aspects of the networks and their security.</p>
+<p>Apps <em>running</em> on the Ethereum blockchain, however, are only guaranteed to be as secure as their developers have made them. For example, code can sometimes contain bugs that could result in loss of funds. While their source code is also visible to all, the user bases of each individual app are much smaller than Ethereum’s as a whole, and so fewer eyes are on them. It’s important to do research on any decentralized app you plan to use.</p>
+<p>The Ethereum protocol is currently being updated in ways that are intended to make it faster and even more secure. See the Ethereum 2.0 section below for more.</p>
+<h2><a id="how-does-ethereum-work" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>How does Ethereum work?</h2>
+<p>You might have heard that the Bitcoin blockchain is a lot like a bank’s ledger, or even a checkbook. It’s a running tally of every transaction made on the network going back to the very beginning — and all the computers on the network contribute their computing power towards the work of ensuring that the tally is accurate and secure.</p>
+<p>The Ethereum blockchain, on the other hand, is more like a computer: while it also does the work of documenting and securing transactions, it’s much more flexible than the Bitcoin blockchain. Developers can use the Ethereum blockchain to build a huge variety of tools — everything from logistics management software to games to the entire universe of DeFi applications (which span lending, borrowing, trading, and more).</p>
+<ul>
+<li>Ethereum uses a 'virtual machine' to achieve all this, which is like a giant, global computer made up of many individual computers running the Ethereum software. Keeping all of those computers running involves investment in both hardware and electricity by participants. To cover those costs, the network uses its own Bitcoin-like cryptocurrency called Ether (or, more commonly, ETH).</li>
+<li>ETH keeps the whole thing running. You interact with the Ethereum network by using ETH to pay the network to execute smart contracts. As a result, the fees paid in ETH are called “gas.”</li>
+<li>Gas rates vary depending on how busy the network is. A new version of the Ethereum blockchain called Ethereum 2.0, which aims to increase efficiency, began rolling out in December 2020. (The transition to the new blockchain is scheduled to happen over the next two years.)</li>
+</ul>
+<h2><a id="what-is-ethereum-2-0" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>What is Ethereum 2.0?</h2>
+<p>Ethereum 2.0 (often referred to as ETH2) is a major upgrade to the Ethereum network. It’s designed to allow the Ethereum network to grow while increasing security, speed, and efficiency.</p>
+<p>As of early 2021, Ethereum 2.0 and Ethereum 1.0 exist side by side — but the original blockchain will eventually merge with ETH2 blockchain. (If you’re an ETH holder you won’t have to do anything — your holdings on the ETH 1.0 blockchain will automatically migrate to the ETH2 blockchain.) The transition to ETH2 began in December of 2020, and is scheduled to take two years.</p>
+<p><strong>Why is Ethereum 2.0 necessary?</strong> Moving a popular cryptoasset to a new platform is a complex endeavor, but for Ethereum to scale and evolve, it needs to happen. That’s because the “Proof of Work” method used by the ETH 1.0 blockchain to verify transactions causes bottlenecks, increases fees, and consumes substantial resources (particularly electricity).</p>
+<p><strong>What is Proof of Work?</strong> How do cryptocurrency networks make sure that nobody spends the same money twice without a central authority like Visa or Paypal in the middle? They use a consensus mechanism. When ETH 1.0 launched, it adopted the consensus mechanism pioneered by Bitcoin: the aptly named Proof of Work.</p>
+<ul>
+<li>Proof of Work requires a huge amount of processing power, which is contributed by virtual “<a href="https://www.coinbase.com/learn/crypto-basics/what-is-mining">miners</a>” around the world who compete to be the first to solve a time-consuming math puzzle.</li>
+<li>The winner gets to update the blockchain with the latest verified transactions, and is rewarded with a predetermined amount of ETH.</li>
+<li>This process happens every 30 seconds (compared to Bitcoin’s approximately 10-minute cadence). As traffic on the network has increased, the limitations of Proof of Work have caused bottlenecks during which fees spike unpredictably.</li>
+</ul>
+<h2><a id="what-is-staking" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>What is staking?</h2>
+<p><img src="//images.ctfassets.net/q5ulk4bp65r7/6Rdv667M3OCOWkCYPJILFP/c83b7b04e346f708243895f1f92380a9/what-is-proof-of-stake.png?w=1180&amp;fm=png" alt="A stack of coins with a verified check mark above it " />Ethereum’s founders were aware of Proof of Work’s limitations. So a very different solution was devised for Ethereum 2.0. — one that will ultimately allow the network to efficiently process thousands of Ethereum transactions a second.</p>
+<p><strong>Ethereum 2.0 uses a consensus mechanism called Proof of Stake</strong>, which is faster, less resource-intensive, and (at least theoretically) more secure. The end result is similar to Proof of Work’s, in that a network participant is chosen to verify the latest transactions, update the blockchain, and earn some ETH.</p>
+<ul>
+<li>Rather than requiring a network of miners racing to solve a puzzle, <strong>Proof of Stake requires a robust network of participants</strong> who are literally invested in the success of the enterprise.</li>
+<li>These stakeholders are called <strong>validators</strong>. Instead of contributing processing power as miners do, validators contribute ETH to a “staking pool.”</li>
+<li>The act of contributing ETH to the pool is called <strong>staking</strong>. If you choose to stake some of your ETH, you will earn rewards in proportion to the size of your stake. For most users, staking will function much like an interest-bearing savings account.</li>
+<li>The network selects a winner based on the amount of ETH each validator has in the pool and the length of time they’ve had it there — literally <strong>rewarding the most invested participants</strong>.</li>
+<li>Once the winner has validated the latest block of transactions, other validators can attest that the block is accurate. When a threshold number of these attestations have been made, the network updates the blockchain.</li>
+<li>All participating validators receive a <strong>reward</strong> in ETH, which is distributed by the network in proportion to each validator’s stake.</li>
+</ul>
+<p><strong>Staking is open to anyone who is interested</strong> (<a href="https://www.coinbase.com/staking">and coming soon to Coinbase</a>).</p>
+<p><strong>Smart contracts 101</strong></p>
+<p><a href="https://www.coinbase.com/learn/crypto-basics/what-is-a-smart-contract">Smart contracts</a> were first <a href="https://www.fon.hum.uva.nl/rob/Courses/InformationInSpeech/CDROM/Literature/LOTwinterschool2006/szabo.best.vwh.net/idea.html">proposed</a> in the 1990s by a computer scientist and lawyer named Nick Szabo. <strong>Szabo famously compared a smart contract to a vending machine.</strong> Imagine a machine that sells cans of soda for a quarter. If you put a dollar into the machine and select a soda, the machine is hardwired to either produce your drink and 75 cents in change, or (if your choice is sold out) to prompt you to make another selection or get your dollar back. This is an example of a simple smart contract. Just like a soda machine can automate a sale without a human intermediary, smart contracts can automate virtually any kind of exchange.</p>
+<h2><a id="a-brief-history-of-ethereum" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>A brief history of Ethereum</h2>
+<p><strong>2013</strong></p>
+<ul>
+<li>A 19-year-old computer programmer (and <em>Bitcoin Magazine</em> cofounder) named Vitalik Buterin releases a <a href="https://ethereum.org/en/whitepaper/">whitepaper</a> proposing a highly flexible blockchain that could support virtually any kind of transaction.</li>
+</ul>
+<p>Brian Armstrong, our CEO and co-founder, recently spoke with Vitalik Buterin, creator of Ethereum, about topics ranging from ETH2 to scaling the cryptoeconomy.</p>
+<p><strong>2014</strong></p>
+<ul>
+<li>The Toronto-based teenager, along with a team of cofounders including Gavin Wood, crowdfunds the development of the Ethereum protocol with the sale of $18 million in pre-launch tokens.</li>
+</ul>
+<p><strong>2015</strong></p>
+<ul>
+<li>The first public version of the Ethereum blockchain launches in July. Smart contract functionality begins to roll out on the Ethereum blockchain.</li>
+</ul>
+<p><strong>2016</strong></p>
+<ul>
+<li>Hackers steal around $50 million from a smart-contract-powered venture fund called the DAO (short for Decentralized Autonomous Organization) by exploiting a software bug.</li>
+<li>In a divisive vote, Ethereum’s community chooses to revise the protocol in a way that would restore the lost funds. This results in the Ethereum blockchain branching off (via a <a href="https://www.coinbase.com/learn/crypto-basics/what-is-a-fork">hard fork</a>) into two separate blockchains, each with its own active community: Ethereum and Ethereum Classic.</li>
+</ul>
+<p><strong>2017</strong></p>
+<ul>
+<li>The ERC-20 standard is created, making it easier for developers to build compatible applications. ERC-20 defines a way to create <a href="https://www.coinbase.com/learn/crypto-basics/what-is-a-token">an asset (or token)</a> on top of the Ethereum blockchain.</li>
+<li>The first widely popular Ethereum-based app arrives in the form of a game called CryptoKitties, in which users collect and trade digital cats. It becomes a genuine <a href="https://www.nytimes.com/2018/05/18/style/cryptokitty-auction.html">craze</a>; at the peak, rare digital cats sell for upwards of $200,000.</li>
+<li>The nonprofit Ethereum Enterprise Alliance launches to develop practical applications for smart contract technology. Members include JP Morgan, Samsung, Microsoft, and Mastercard.</li>
+<li>MakerDAO — the first Decentralized finance (or DeFi) protocol on the Ethereum blockchain — launches. Maker also introduces the first ETH-based stablecoin, DAI.</li>
+<li>ETH breaks $100 USD for the first time.</li>
+</ul>
+<p><strong>2018</strong></p>
+<ul>
+<li>DeFi, which aims to transform the financial-services industry by making transactions faster, cheaper, and more secure, gains momentum with the arrival of lending protocol Compound and decentralized exchange Uniswap.</li>
+<li>The USDC stablecoin is launched. Backed by the <a href="https://medium.com/centre-blog/usdc-celebrating-the-1st-anniversary-of-the-fastest-growing-stablecoin-4a05dc3784b8">CENTRE Consortium</a>, a partnership between Coinbase and Circle, it reaches $1 billion in issued coins in the first year.</li>
+<li>ETH breaks \(1,000 USD for the first time in January, before falling back under \)100.</li>
+</ul>
+<p><strong>2020</strong></p>
+<ul>
+<li>The Ethereum 2.0 upgrade begins in December. The complete transition from Ethereum 1.0 to Ethereum 2.0 is scheduled to take around two years to complete.</li>
+<li>As part of Ethereum 2.0’s first phase, Proof of Stake is introduced. ETH 1.0 continues to use Proof of Work as its consensus mechanism.</li>
+</ul>
+<p><strong>2021</strong></p>
+<ul>
+<li>ETH hits new all-time high above $1,700 in February</li>
+<li>See the current price at</li>
+</ul>
+<h2><a id="how-do-you-buy-ethereum" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>How do you buy Ethereum?</h2>
+<p>However you acquire your ETH, you’ll need to understand a few basic concepts. Every address on the Ethereum network is issued a public key and a private key, and you’ll need a wallet to manage your crypto holdings.</p>
+<ul>
+<li><strong>Public key</strong>: Think of this as the crypto version of an email address. Your Ethereum public key is where people can send you ETH and Ethereum-based tokens like USDC and Dai. You can safely give this out to others.</li>
+<li><strong>Private key</strong>: Think of this like your password. You should generally avoid giving this out to people. A <a href="https://www.coinbase.com/learn/crypto-basics/what-is-a-private-key">private key</a> is a long string of letters and numbers. (It can also be in the form of a series of words called a <a href="https://help.coinbase.com/en/more/coinbase-commerce/privacy-and-security/seed-phrases">seed phrase</a>.) It’s crucial to keep track of your private keys. If you lose them, you lose your Ether forever.</li>
+<li><strong>Wallet</strong>: To store and secure your Ether you’ll need a <a href="https://www.coinbase.com/learn/crypto-basics/what-is-a-crypto-wallet">wallet</a>. If you’re just starting out, the easiest option is to make an account via the Coinbase app or coinbase.com — in which case you’ll interact with a “custodial wallet” that stores and secures your private keys for you. As you progress you might want to investigate other wallet options that are built for interacting with decentralized finance (or DeFi) protocols such as Compound (a lending and savings app) or Uniswap (a decentralized exchange that allows you to trade cryptocurrencies).</li>
+</ul>
+<h2><a id="how-does-ethereum-have-value" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>How does Ethereum have value?</h2>
+<p>There are a few ways of thinking about the answer to this question. On one level, Ethereum’s value is set by markets like any other asset. People buy it with Bitcoin, dollars, euros, yen, and other currencies 24 hours a day. Depending on demand, the price can fluctuate from day to day. (Ethereum’s value tends to be volatile compared to currencies such as the US dollar or equities like Fortune 500 stocks because it is still an emerging technology.)</p>
+<p>But <em>why</em> the market prices it the way it does is a much more complicated question. To many investors Ethereum’s value is based on its flexibility as a platform for issuing stablecoins and running DeFi applications — resulting in a growing user base and growing transaction fees.</p>
+<h2><a id="what%E2%80%99s-next-for-ethereum" class="anchor" aria-hidden="true"><span class="octicon octicon-link"></span></a>What’s next for Ethereum?</h2>
+<p>As of early 2021, Ethereum is host to the vast majority of blockchain applications and has a market cap of just under \(200 billion, with over \)55 billion locked into tokens on the blockchain. Popular stablecoins such as USDC and USDT mostly live on Ethereum today due to its network effects.</p>
+<p>But a variety of new smart contract blockchains are <a href="https://medium.com/@coinbaseblog/a712c04c344f">beginning to compete</a> in the space. So while Ethereum is the dominant market leader today, there is growing pressure for it to successfully execute the transition to Ethereum 2.0.</p>
+</div></body></html>

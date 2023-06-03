@@ -1,0 +1,38 @@
+<?php
+
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+
+return new class extends Migration {
+    /**
+     * Run the migrations.
+     *
+     * @return void
+     */
+    public function up()
+    {
+        Schema::create('coins', function (Blueprint $table) {
+            $table->id();
+            $table->string('cg_id', 50);
+            $table->string('symbol', 10);
+            $table->string('name', 50);
+            $table->string('icon');
+            $table->string('network', 10)->nullable();
+            $table->address('address', '地址', null, true);
+            $table->unsignedInteger('market_cap_rank');
+            $table->json('sparkline')->nullable();
+            $table->timestamps();
+        });
+    }
+
+    /**
+     * Reverse the migrations.
+     *
+     * @return void
+     */
+    public function down()
+    {
+        Schema::dropIfExists('coins');
+    }
+};
